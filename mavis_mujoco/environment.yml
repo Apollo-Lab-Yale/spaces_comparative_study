@@ -1,0 +1,30 @@
+name: mavis-mujoco
+channels:
+  - nvidia
+  - conda-forge
+dependencies:
+  - cuda-cudart=12.1.105
+  - cuda-cupti=12.1.105
+  - cuda-libraries=12.1.0
+  - cuda-nvrtc=12.1.105
+  - cuda-nvtx=12.1.105
+  - cuda-opencl=12.4.127
+  - cuda-runtime=12.1.0
+  - cuda-toolkit=12.1.0
+  - numba=0.59.1
+  - numpy=1.26.4
+  - scipy=1.13.0
+  - matplotlib=3.8.4
+  - matplotlib-base=3.8.4
+  - pillow=9.4.0
+  - pyyaml=6.0.1
+  - imageio=2.34.1
+  - libstdcxx-ng=13.2.0
+  - pip=24.0
+  - pip:
+      - mujoco==3.1.5
+      - nlopt==2.7.1
+      - gymnasium==1.0.0a2
+      - pygame==2.5.2
+      - pyrealsense2==2.54.2.5684
+      - zarr==2.18.1

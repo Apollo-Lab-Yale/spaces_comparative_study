@@ -1,0 +1,9 @@
+diffusers==0.18.2
+moviepy==1.0.3
+tensorboard==2.16.2
+tensorboard-plugin-wit==1.8.1
+torch==2.3.0
+torchaudio==2.3.0
+torchvision==0.18.0
+opencv-python==4.9.0.80
+opencv-contrib-python==4.9.0.80
