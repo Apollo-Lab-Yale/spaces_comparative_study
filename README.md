@@ -6,10 +6,8 @@
 - 128GB RAM
 
 ## Setup
-1. Clone the repository and its submodules
-2. Install the dependencies of the gym
+1. Install the dependencies of the gym
    ```
-    git submodule update --init --recursive
     cd mavis_mujoco
     mamba env create -f environment.yml 
     conda activate mavis-mujoco
@@ -18,7 +16,7 @@
     cd ..
     pip install -e .
     ```
-3. Install other packages
+2. Install other packages
    ```
     cd ..
     pip install -r requirements.txt
