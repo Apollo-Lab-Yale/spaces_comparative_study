@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="A Comparative Study on State-Action Spaces for Learning Viewpoint Selection and Manipulation with Diffusion Policy">
+  <meta name="keywords" content="Viewpoint Selection and Manipulation, Dual-Arm System, Diffusion Policy">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Comparative Study on State-Action Spaces for Learning Viewpoint Selection and Manipulation with Diffusion Policy</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">A Comparative Study on State-Action Spaces for Learning Viewpoint Selection and Manipulation with Diffusion Policy</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sunxiatao.me/">Xiatao Sun</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a>Francis Fan</a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a>Yinxing Chen</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://dannyrakita.net/">Daniel Rakita</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Yale University,</span>
+            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://youtu.be/e3eZOHaWa0Y"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Apollo-Lab-Yale/spaces_comparative_study"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://yaleedu-my.sharepoint.com/:f:/g/personal/xiatao_sun_yale_edu/EvMeZvXG_q1NlKCC7q5dPq8BYlsEBU6BCXy7JZerYHeiYA?e=hdHX9Q"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+       Top row shows third-person view of each task. Bottom row shows the viewpoint-arm view.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Robotic manipulation tasks often rely on static cameras for perception, 
+            which can limit flexibility, particularly in scenarios like robotic surgery 
+            and cluttered environments where mounting static cameras is impractical. 
+            Ideally, robots could jointly learn a policy for dynamic viewpoint and manipulation. 
+            However, it remains unclear which state-action space is most suitable for this
+             complex learning process. To enable manipulation with dynamic viewpoints and 
+             to better understand impacts from different state-action spaces on this policy 
+             learning process, we conduct a comparative study on the state-action spaces for 
+             policy learning and their impacts on the performance of visuomotor policies that 
+             integrate viewpoint selection with manipulation. Specifically, we examine the 
+             configuration space of the robotic system, the end-effector space with a dual-arm 
+             Inverse Kinematics (IK) solver, and the reduced end-effector space with a look-at 
+             IK solver to optimize rotation for viewpoint selection. We also assess variants 
+             with different rotation representations. Our results demonstrate that state-action 
+             spaces utilizing Euler angles with the look-at IK achieve superior task success 
+             rates compared to other spaces. Further analysis suggests that these performance 
+             differences are driven by inherent variations in the high-frequency components 
+             across different state-action spaces and rotation representations.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/e3eZOHaWa0Y?si=hyfdb0JjZsiTDBQP"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- State-Action Spaces -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">State-Action Spaces</h2>
+
+        <!-- Overview -->
+        <h3 class="title is-4">Overview</h3>
+        <div class="content has-text-justified">
+          <p>
+            We explore different state-action spaces, including configuration space, end-effector space, and look-at space. 
+            We also include variants of these state-action spaces with different rotation representations in our comparison.
+          </p>
+        </div>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <video id="teaser" autoplay muted loop playsinline height="100%">
+              <source src="./static/videos/state-action_spaces_overview.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <br/>
+        <!--/ Overview -->
+
+        <div class="columns is-centered">
+
+          <!-- EEF IK -->
+          <div class="column">
+            <div class="content">
+              <h3 class="title is-4">Dual-Arm End-Effector IK</h3>
+              <p>
+                To facilitate policy learning in the end-effector space, we use a dual-arm end-effector IK solver. 
+                Dual-arm end-effector IK computes the joint configurations for both robot arms to achieve specified positions 
+                and orientations of their end-effectors simultaneously within the workspace.
+              </p>
+              <img src="./static/images/eef_space.png"
+                class="interpolation-image"
+                alt="End-Effecto Space."/>
+            </div>
+          </div>
+          <!--/ EEF IK -->
+    
+          <!-- Look-At IK. -->
+          <div class="column">
+            <h3 class="title is-4">Look-At IK</h3>
+            <div class="columns is-centered">
+              <div class="column content">
+                <p>
+                  To further reduce the dimensionality of the state-action space, we introduce a look-at IK solver for the look-at space.
+                  Look-at IK extends this by automatically determining the orientation of the viewpoint end-effector to focus on the manipulation task.
+                </p>
+                <img src="./static/images/look-at_space.png"
+                  class="interpolation-image"
+                  alt="Look-At Space."/>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+        <!--/ Look-At IK. -->
+
+      </div>
+    </div>
+    <!--/ State-Action Spaces -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{,
+                author    = {},
+                title     = {},
+                journal   = {},
+                year      = {},
+              }
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/25_ICRA_ViewpointLearningStateActionSpace.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/M4D-SC1ENTIST" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
